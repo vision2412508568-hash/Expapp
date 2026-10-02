@@ -155,6 +155,7 @@ public class MainActivity extends Activity {
 
   void backup(){
     String d = sp.getString("dir", null); if (d == null) return;
+        if (E.isEmpty() && B[0] == 0 && B[1] == 0) return;
     try {
       Uri t = Uri.parse(d); OutputStream os = null;
       try { os = getContentResolver().openOutputStream(fileUri(t), "wt"); } catch (Exception e) {}
